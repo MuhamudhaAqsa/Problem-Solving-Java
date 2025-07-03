@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        double p = input.nextDouble();
+        double n = input.nextDouble();
+        double r = input.nextDouble();
+        double si = (p * n * r) / 100;
+        System.out.println(si);
+    }
+}
