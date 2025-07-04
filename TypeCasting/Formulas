@@ -1,0 +1,3 @@
+Narrow Type-Casting:
+
+smaller_datatype smaller_datatype_variable_name = (smaller_datatype) larger_datatype_variable;
