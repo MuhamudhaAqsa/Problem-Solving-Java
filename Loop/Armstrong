@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int count = 0;
+        int n1 = input.nextInt();
+        int n2 = input.nextInt();
+        int sum = 0;
+        for(int i = n1 ; i <= n2 ; i++)
+        {
+            int num = i;
+            while(num > 0)
+        {
+            int rem = num % 10;
+            count = count + 1;
+            num = num / 10;
+        }
+            int n = i;
+            while(n > 0)
+            {
+                int r = n % 10;
+                double power = Math.pow(r, count);
+                int p = (int) power;
+                sum = sum + p;
+                n = n / 10;
+            }
+            if(sum == i)
+            {
+                System.out.print(sum + " ");
+            }
+            sum = 0;
+            count = 0;
+        }
+    }
+}
+
+To find Armstrong Number between two given number.
