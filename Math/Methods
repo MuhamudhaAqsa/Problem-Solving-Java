@@ -1,0 +1,3 @@
+Power
+---
+double power = Math.pow(2, 3);
