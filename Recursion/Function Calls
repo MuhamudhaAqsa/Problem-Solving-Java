@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Main 
+{
+    public static void main(String[] args)
+    {
+       print1(1);
+       System.out.println("I am the main function!");
+    }
+    static void print1(int n)
+    {
+        System.out.println(n);
+        print2(2);
+        System.out.println("One");
+    }
+    static void print2(int n)
+    {
+        System.out.println(n);
+        print3(3);
+        System.out.println("Two");
+    }
+    static void print3(int n)
+    {
+        System.out.println(n);
+        print4(4);
+        System.out.println("Three");
+    }
+    static void print4(int n)
+    {
+        System.out.println(n);
+        print5(5);
+        System.out.println("Four");
+    }
+    static void print5(int n)
+    {
+        System.out.println(n);
+    }
+}
