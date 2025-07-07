@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int size = input.nextInt();
+        int[] arr = new int[size];
+        for(int i = 0 ; i < arr.length ; i++)
+        {
+            arr[i] = input.nextInt();
+        }
+        int target = input.nextInt();
+        int start = 0;
+        int end = arr.length - 1;
+        int index = bs(arr, target, start, end);
+        System.out.println(index);
+    }
+    static int bs(int[] arr, int target, int start, int end)
+    {
+        if(start > end)
+        {
+            return -1;
+        }
+        int middle = (start + end) / 2;
+        if(arr[middle] == target)
+        {
+            return middle;
+        }
+        if(arr[middle] > target)
+        {
+            return bs(arr, target, start, middle - 1);
+        }
+        return bs(arr, target, middle + 1, end);
+    }
+}
