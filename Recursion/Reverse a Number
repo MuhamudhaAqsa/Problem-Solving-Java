@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int count = function(n);
+        System.out.println(count);
+        int rev = reverse(n, count);
+        System.out.println(rev);
+    }
+    static int reverse(int n, int count)
+    {
+       if(count == 1)
+       {
+           return n;
+       }
+       double number = Math.pow(10, count - 1);
+       int num = (int) number;
+       return (n % 10) * num + reverse(n / 10, count - 1);
+    }
+    static int function(int n)
+    {
+        if(n == 0)
+        {
+            return 0;
+        }
+        return 1 + function(n/10);
+    }
+}
