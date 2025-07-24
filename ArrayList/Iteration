@@ -6,6 +6,7 @@ public class Main
     {
         Scanner input = new Scanner(System.in);
         int n = 0;
+        int number = 0;
         
         ArrayList<Integer> numbers = new ArrayList<>();
         
@@ -15,7 +16,11 @@ public class Main
             numbers.add(n);
         }
         
-        System.out.println(numbers);
+        for(int i = 0 ; i < 6 ; i++)
+        {
+            number = numbers.get(i);
+            System.out.println(number);
+        }
         
     }
 }
