@@ -1,0 +1,42 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int n = 0;
+        
+        ArrayList<ArrayList<Integer>> numbers = new ArrayList<>();
+        
+        System.out.println(numbers);
+        
+        for(int i = 0 ; i < 3 ; i++)
+        {
+            ArrayList<Integer> arraylist = new ArrayList<>();
+            numbers.add(arraylist);
+        }
+        
+        System.out.println(numbers);
+        
+        for(int i = 0 ; i < 3 ; i++)
+        {
+            for(int j = 0 ; j < 4 ; j++)
+            {
+                n = input.nextInt();
+                numbers.get(i).add(n);
+            }
+        }
+        
+        System.out.println(numbers);
+        
+        for(int i = 0 ; i < 3 ; i++)
+        {
+            for(int j = 0 ; j < 4 ; j++)
+            {
+                System.out.println(numbers.get(i).get(j));
+            }
+        }
+        
+    }
+}
