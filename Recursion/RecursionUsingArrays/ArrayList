@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int[] array = {1, 2, 3, 4, 4, 8};
+        ArrayList<Integer> arraylist = new ArrayList<>();
+        linearsearch(array, 0, 4, arraylist);
+        if(arraylist.isEmpty())
+        {
+           arraylist.add(-1);
+        }
+        System.out.println(arraylist);
+    }
+    
+    static void linearsearch(int[] array, int index, int target, ArrayList<Integer> list)
+    {
+        if(index == array.length)
+        {
+            return;
+        }
+        if(array[index] == target)
+        {
+           list.add(index);
+        }
+        linearsearch(array, index + 1, target, list);
+    }
+}
