@@ -1,0 +1,21 @@
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int[] array = {1, 2, 4, 8,  9, 12};
+        boolean trueorfalse = sortedornot(array, 0);
+        System.out.println(trueorfalse);
+    }
+    static boolean sortedornot(int[] array, int index)
+    {
+        if(index == array.length - 1)
+        {
+            return true;
+        }
+        if(array[index] < array[index + 1])
+        {
+            return sortedornot(array, index + 1);
+        }
+        return false;
+    }
+}
