@@ -1,0 +1,32 @@
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	      BackPack backpack = new AmericanTourister();
+	      backpack.carry();
+	}
+}
+
+
+abstract class BackPack
+{
+    
+    abstract void carry();
+    
+    void type()
+    {
+        System.out.println("It is a light-weight bag!");
+    }
+    
+}
+
+class AmericanTourister extends BackPack
+{
+    
+    void carry()
+    {
+        type();
+        System.out.println("The bag can carry a laptop");
+    }
+    
+}
