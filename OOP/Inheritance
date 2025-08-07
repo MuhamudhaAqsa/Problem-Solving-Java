@@ -1,0 +1,125 @@
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	     Box box1 = new Box(2, 3, 5);
+	     //System.out.println(box1.l + " " + box1.w + " " + box1.h);
+	     
+	     Box box2 = new Box(box1);
+	     
+	     BoxWeight boxweight1 = new BoxWeight();
+	     //System.out.println(boxweight1.weight + " " + boxweight1.l);
+	     
+	     BoxWeight boxweight2 = new BoxWeight(2, 3, 4, 6);
+	     
+	     //Box box3 = new BoxWeight(2, 3, 4, 6);
+	     //System.out.println(box3.w);
+	     
+	     //BoxWeight boxweight3 = new Box(2, 3, 4);
+	     
+	     BoxWeight boxweight4 = new BoxWeight(boxweight2);
+	     
+	     //System.out.println(boxweight4.l + " " + boxweight4.h + " " + boxweight4.w + " " + boxweight4.weight);
+	     
+	     BoxPrice boxprice1 = new BoxPrice();
+	     //System.out.println(boxprice1.price);
+	     System.out.println(boxprice1.l);
+	     
+	     BoxPrice boxprice2 = new BoxPrice(2, 4, 6, 8, 20);
+	     /*System.out.println(boxprice2.l);
+	     System.out.println(boxprice2.h);
+	     System.out.println(boxprice2.w);
+	     System.out.println(boxprice2.weight);
+	     System.out.println(boxprice2.price);*/
+	     
+	}
+}
+
+class Box
+{
+    double l;
+    double w;
+    double h;
+    double weight;
+    
+    Box ()
+    {
+        super();
+        
+        this.l = -1;
+        this.w = -1;
+        this.h = -1;
+    }
+    
+    Box (double side)
+    {
+        this.w = side;
+        this.l = side;
+        this.h = side;
+    }
+    
+    Box (double l, double h, double w)
+    {
+        this.l = l;
+        this.h = h;
+        this.w = w;
+    }
+    
+    Box (Box old)
+    {
+        this.h = old.h;
+        this.l = old.l;
+        this.w = old.w;
+    }
+    
+    public void information()
+    {
+        System.out.println("Box is lavender");
+    }
+    
+}
+
+class BoxWeight extends Box
+{
+    double weight;
+    
+    BoxWeight()
+    {
+        this.weight = -1;
+        this.l = 18;
+    }
+    
+    BoxWeight (BoxWeight other)
+    {
+        super(other);
+        this.weight = other.weight;
+    }
+    
+    BoxWeight (double l, double h, double w, double weight)
+    {
+        super(l, h, w);
+        
+        this.weight = weight;
+    }
+    
+}
+
+class BoxPrice extends BoxWeight
+{
+    double price;
+    
+    BoxPrice ()
+    {
+        super();
+        this.price = 20.0;
+    }
+    
+    BoxPrice (double l, double h, double w, double weight, double price)
+    {
+        super(l, h, w, weight);
+        this.price = price;
+    }
+    
+    
+}
+
