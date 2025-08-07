@@ -1,0 +1,31 @@
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	      MultiTalentedPerson person = new MultiTalentedPerson();
+	      person.cook();
+	      person.paint();
+	}
+}
+interface Cook
+{
+    void cook();
+}
+interface Paint
+{
+    void paint();
+}
+class MultiTalentedPerson implements Cook, Paint
+{
+    public void cook()
+    {
+        System.out.println("cook");
+    }
+    public void paint()
+    {
+        System.out.println("paint");
+    }
+}
+
+
+
