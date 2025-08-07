@@ -1,0 +1,24 @@
+public class Main
+{
+	public static void main(String[] args)
+	{
+	    Numbers numbers = new Numbers();
+	    int sum = numbers.sum(8, 4);
+	    int total = numbers.sum(8, 4, 2);
+	    System.out.println(sum);
+	    System.out.println(total);
+	}
+}
+
+class Numbers
+{
+    int sum(int a, int b)
+    {
+        return a + b;
+    }
+    int sum(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+}
+
