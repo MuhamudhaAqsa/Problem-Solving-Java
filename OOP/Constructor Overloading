@@ -1,0 +1,32 @@
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Student aqsa = new Student();
+		System.out.println(aqsa.rno);
+		
+		Student jenifa = new Student(17, "jenifa", 7.8f);
+		System.out.println(jenifa.cgpa);
+	}
+}
+
+class Student
+{
+    int rno;
+    String name;
+    float cgpa;
+    
+    Student ()
+    {
+        this.rno = 73;
+        this.name = "Muhamudha Aqsa";
+        this.cgpa = 7.53f;
+    }
+    
+    Student (int rno, String name, float cgpa)
+    {
+        this.rno = rno;
+        this.name = name;
+        this.cgpa = cgpa;
+    }
+}
