@@ -69,5 +69,8 @@ public class Main
         String concatenation = s1.concat(s2);
         concatenation = concatenation.concat(s3);
         System.out.println(concatenation);
+
+       char[] characterArray = concatenation.toCharArray();
+       System.out.println(Arrays.toString(characterArray));
     }
 }
