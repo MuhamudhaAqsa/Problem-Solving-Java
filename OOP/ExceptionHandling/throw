@@ -1,0 +1,31 @@
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    try
+	    {
+	        eligibility(22);
+	    }
+	    
+	    catch(ArithmeticException e)
+	    {
+	        System.out.println(e.getMessage());
+	    }
+	}
+	
+	
+	static void eligibility(int age)
+	{
+	    if(age < 18)
+	    {
+	        ArithmeticException exception = new ArithmeticException("Not eligible to vote");
+	        throw exception;
+	    }
+	    else
+	    {
+	        System.out.println("Eligible to vote");
+	    }
+	}
+	
+	
+}
