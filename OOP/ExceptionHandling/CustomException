@@ -1,0 +1,34 @@
+public class Main
+{
+	public static void main(String[] args) 
+	{
+        String resource = null;
+        
+        try
+        {
+            resource = "Important resource";
+            MyException exception = new MyException("Custom exception occured");
+            throw exception;
+        }
+        
+        catch(MyException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
+        finally
+        {
+            resource = null;
+            System.out.println("Resource cleaned up!");
+        }
+	}
+	
+}
+
+class MyException extends Exception
+{
+    MyException (String message)
+    {
+        super(message);
+    }
+}
