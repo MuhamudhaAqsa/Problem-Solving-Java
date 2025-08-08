@@ -1,0 +1,21 @@
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    try
+	    {
+	        readFile();
+	    }
+	    
+	    catch(IOException e)
+	    {
+	        System.out.println(e.getMessage());
+	    }
+	}
+	
+	static void readFile() throws IOException
+	{
+	    FileReader fr = new FileReader("file.txt");
+	}
+}
