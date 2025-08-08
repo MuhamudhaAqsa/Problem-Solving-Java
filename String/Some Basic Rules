@@ -1,0 +1,27 @@
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        
+        
+        System.out.println(1 + 'a');
+        
+        char c = 1 + 'a';
+        System.out.println(c);
+        
+        int n = 1 + 'a';
+        System.out.println(n);
+        
+        System.out.println("s" + 1);
+        
+        String s = "s" + 1;
+        System.out.println(s);
+        
+        String str = 'a' + "b";
+        System.out.println(str);
+        
+        System.out.println('a' + 'b');
+    
+    }
+}
