@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        String s = input.nextLine();
+        
+        String string = "";
+        
+        String str = "";
+        
+        
+        String letter = "";
+        
+        int number = 0;
+        
+        StringBuilder answer = new StringBuilder();
+        
+        String[] array = s.split(" ");
+        
+        String substring = "";
+        
+        for(int i = 0 ; i < array.length ; i++)
+        {
+            letter = "";
+            number = i + 1;
+            letter = letter + number;
+            for(int j = 0 ; j < array.length ; j++)
+            {
+            str = "";
+            string = array[j];
+            str = str + string.charAt(string.length() - 1);
+            if(str.equals(letter))
+            {
+                substring = string.substring(0, string.length() - 1);
+                answer.append(substring);
+                answer.append(" ");
+            }
+            }
+        }
+        String ans = answer.toString();
+        System.out.println(ans);
+    }
+}
