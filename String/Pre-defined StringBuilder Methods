@@ -1,0 +1,32 @@
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        
+       StringBuilder sb = new StringBuilder("Go");
+       sb = sb.append(" there!");
+       System.out.println(sb);
+       sb = sb.append('!');
+       System.out.println(sb);
+       
+       sb = sb.reverse();
+       System.out.println(sb);
+       
+       System.out.println(sb.length());
+       
+       System.out.println(sb.charAt(5));
+       
+       sb = sb.delete(0, 3);
+       System.out.println(sb);
+       
+       StringBuilder builder = new StringBuilder();
+       builder.append("Morning");
+       System.out.println(builder);
+       builder.insert(0, "Good ");
+       System.out.println(builder);
+       
+       builder.setCharAt(4, ',');
+       System.out.println(builder);
+    }
+}
