@@ -16,9 +16,10 @@ class LL
     public void insertFirst(int val)
     {
         Node node = new Node(val);
+        System.out.println(node.next);
         node.next = head;
+        System.out.println(node.next);
         head = node;
-    
     
     if(tail == null)
     {
@@ -27,6 +28,19 @@ class LL
     
     size++;
     
+    }
+    
+    public void insertLast(int val)
+    {
+        Node node = new Node(val);
+        if(tail == null)
+        {
+            insertFirst(val);
+            return;
+        }
+        tail.next = node;
+        tail = node;
+        size++;
     }
     
     //Display😍
@@ -47,10 +61,12 @@ class LL
         private int value;
         private Node next;
         
-        public Node(int value)
+        public Node(int val)
         {
-            this.value = value;
+            this.value = val;
         }
+        
+         
         
         public Node(int value, Node next)
         {
@@ -60,6 +76,7 @@ class LL
         
         
     }
+    
 }
 
 public class Main
@@ -71,6 +88,8 @@ public class Main
         list.insertFirst(2);
         list.insertFirst(8);
         list.insertFirst(17);
+        list.insertLast(6);
+        list.insertLast(81);
         list.display();
     }
 }
