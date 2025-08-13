@@ -29,7 +29,7 @@ class LL
     
     }
     
-    //Deletion🤍
+    //Display😍
     
     public void display()
     {
