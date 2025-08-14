@@ -43,6 +43,28 @@ class LL
         size++;
     }
     
+    public void insert(int val, int index)
+    {
+        if(index == 0)
+        {
+            insertFirst(val);
+            return;
+        }
+        if(index == size)
+        {
+            insertLast(val);
+            return;
+        }
+        Node temp = head;
+        for(int i = 1 ; i < index; i++)
+        {
+            temp = temp.next;
+        }
+        Node node = new Node(val, temp.next);
+        temp.next = node;
+        size++;
+    }
+    
     //Display😍
     
     public void display()
@@ -90,6 +112,9 @@ public class Main
         list.insertFirst(17);
         list.insertLast(6);
         list.insertLast(81);
+        list.insert(4, 0);
+        list.insert(9, 7);
+        list.insert(16, 3);
         list.display();
     }
 }
