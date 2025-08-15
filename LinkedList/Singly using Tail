@@ -1,0 +1,206 @@
+public class Main
+{
+    public static void main(String[] args)
+    {
+       LL list = new LL();
+       list.insertFirst(4);
+       list.insertFirst(2);
+       list.insertLast(6);
+       list.insertLast(8);
+       list.insert(1, 0);
+       list.insert(3, 2);
+       list.insert(10, 6);
+       list.display();
+       int value = list.deleteFirst();
+       System.out.println(value);
+       list.display();
+       int v = list.deleteLast();
+       System.out.println(v);
+       list.display();
+       int number = list.delete(3);
+       System.out.println(number);
+       list.display();
+       int index = list.find(4);
+       System.out.println(index);
+       System.out.println(list.search(4));
+    }
+}
+
+class LL
+{
+    private Node head;
+    private Node tail;
+    private int size;
+    
+    LL ()
+    {
+        size = 0;
+    }
+    
+    public void insertFirst(int val)
+    {
+        Node node = new Node(val);
+        node.next = head;
+        head = node;
+        
+        if(tail == null)
+        {
+            tail = head;
+        }
+        
+        size++;
+    }
+    
+    public void insertLast(int val)
+    {
+        Node node = new Node(val);
+        tail.next = node;
+        tail = node;
+        
+        size++;
+    }
+    
+    public void insert(int val, int index)
+    {
+        if(index == size)
+        {
+            insertLast(val);
+            return;
+        }
+        if(index == 0)
+        {
+            insertFirst(val);
+            return;
+        }
+        
+        Node temp = head;
+        for(int i = 1 ; i < index ; i++)
+        {
+            temp = temp.next;
+        }
+        Node node = new Node(val, temp.next);
+        temp.next = node;
+        
+        size++;
+    }
+    
+    
+    public int deleteFirst()
+    {
+        int value = head.value;
+        head = head.next;
+        if(head == null)
+        {
+            tail = null;
+        }
+        
+        size--;
+        
+        return value;
+    }
+    
+    public int deleteLast()
+    {
+        if(size == 1)
+        {
+            int value = deleteFirst();
+            return value;
+        }
+        
+        int value = tail.value;
+       
+        Node temp = head;
+        while(temp.next != tail)
+        {
+            temp = temp.next;
+        }
+        tail = temp;
+        tail.next = null;
+        
+        size--;
+        
+        return value;
+    }
+    
+    public int delete(int index)
+    {
+        if(index == 0)
+        {
+            int value = deleteFirst();
+            return value;
+        }
+        if(index == size - 1)
+        {
+            int value = deleteLast();
+            return value;
+        }
+        Node temp = head;
+        for(int i = 1 ; i < index ; i++)
+        {
+            temp = temp.next;
+        }
+        int value = temp.next.value;
+        temp.next = temp.next.next;
+        
+        size--;
+        
+        return value;
+    }
+    
+    public int find(int val)
+    {
+        Node temp = head;
+        int index = 0;
+        while(temp != null)
+        {
+            if(temp.value == val)
+            {
+                return index;
+            }
+            temp = temp.next;
+            index++;
+        }
+        return -1;
+    }
+    
+    public Node search(int val)
+    {
+        Node temp = head;
+        while(temp != null)
+        {
+        if(temp.value == val)
+        {
+            return temp;
+        }
+        temp = temp.next;
+        }
+        return null;
+    }
+    
+    public void display()
+    {
+        Node temp = head;
+        while(temp != null)
+        {
+            System.out.print(temp.value + " " + "->" + " ");
+            temp = temp.next;
+        }
+        System.out.println("END");
+    }
+    
+    class Node
+    {
+        private int value;
+        private Node next;
+        
+        Node (int val)
+        {
+            this.value = val;
+        }
+        Node (int val, Node next)
+        {
+            this.value = val;
+            this.next = next;
+        }
+    }
+}
