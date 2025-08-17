@@ -9,7 +9,8 @@ public class Main
         list.insertFirst(2);
         list.insertFirst(1);
         list.insertLast(6);
-        list.insert(7, 6);
+        list.insertAtIndex(7, 5);
+        list.insert(3, 18);
         list.display();
         list.displayRev();
     }
@@ -54,7 +55,7 @@ class DLL
         node.prev = temp;
     }
     
-    public void insert(int val, int index)
+    public void insertAtIndex(int val, int index)
     {
         if(index == 0)
         {
@@ -73,6 +74,21 @@ class DLL
         temp.next = node;
         node.next.prev = node;
         
+    }
+    
+    public void insert(int after, int val)
+    {
+        Node temp = head;
+        while(temp != null)
+        {
+            if(temp.value == after)
+            {
+                Node node = new Node(val, temp.next, temp);
+                temp.next = node;
+                node.next.prev = node;
+            }
+            temp = temp.next;
+        }
     }
     
     public void display()
