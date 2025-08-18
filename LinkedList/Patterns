@@ -1,17 +1,1 @@
-<table>
-  <tr>
-    <th>🚀 Problem</th>
-    <th>📂 Topic</th>
-    <th>📌 Status</th>
-  </tr>
-  <tr>
-    <td>Remove Duplicates (Sorted)</td>
-    <td>Linked List</td>
-    <td style="color:green;">✔ Completed</td>
-  </tr>
-  <tr>
-    <td>Reverse Linked List</td>
-    <td>Linked List</td>
-    <td style="color:orange;">⏳ In Progress</td>
-  </tr>
-</table>
+Adjacent Comparison
