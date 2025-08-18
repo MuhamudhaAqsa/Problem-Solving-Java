@@ -1,4 +1,5 @@
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Row 1    | Data     | More     |
-| Row 2    | Example  | Values   |
+| Problem                  | Topic       | Status   |
+|---------------------------|-------------|----------|
+| Remove Duplicates (Sorted)| Linked List | ✅ Done  |
+| Reverse Linked List       | Linked List | ⏳ Pending |
+| Two Sum                   | Array       | ✅ Done  |
