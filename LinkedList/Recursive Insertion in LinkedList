@@ -1,0 +1,80 @@
+public class Main
+{
+    public static void main(String[] args)
+    {
+       LL list = new LL();
+       list.insertFirst(1);
+       list.insertFirst(9);
+       list.insertFirst(5);
+       list.insertFirst(3);
+       list.insert(7, 3);
+       list.insert(8, 0);
+       list.insert(16, 6);
+       list.display();
+    }
+}
+
+class LL
+{
+    private Node head;
+    
+    public void insertFirst(int val)
+    {
+        Node node = new Node(val);
+        node.next = head;
+        head = node;
+    }
+    
+    public void insert(int val, int index)
+    {
+        Node temp = head;
+        insertRecursion(val, index, temp);
+    }
+    
+    private void insertRecursion(int val, int index, Node temp)
+    {
+        if(index == 1)
+        {
+            Node node = new Node(val);
+            node.next = temp.next;
+            temp.next = node;
+            return;
+        }
+        if(index == 0)
+        {
+            Node node = new Node(val);
+            node.next = temp;
+            head = node;
+            return;
+        }
+        insertRecursion(val, index - 1, temp.next);
+    }
+    
+    
+    public void display()
+    {
+        Node temp = head;
+        while(temp != null)
+        {
+            System.out.print(temp.value + " " + "->" + " ");
+            temp = temp.next;
+        }
+        System.out.println("END");
+    }
+    
+    class Node
+    {
+        private int value;
+        private Node next;
+        
+        Node (int val)
+        {
+            this.value = val;
+        }
+        Node (int val, Node next)
+        {
+            this.value = val;
+            this.next = next;
+        }
+    }
+}
