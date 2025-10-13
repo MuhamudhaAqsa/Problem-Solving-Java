@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int[] a1 = new int[n];
+        for(int i = 0 ; i < a1.length ; i++)
+        {
+            a1[i] = input.nextInt();
+        }
+        int m = input.nextInt();
+        int[] a2 = new int[m];
+        for(int i = 0 ; i < a2.length ; i++)
+        {
+            a2[i] = input.nextInt();
+        }
+        
+        ArrayConcatenator obj = new ArrayConcatenator(a1, a2);
+        int[] ans = obj.concat();
+        System.out.println(Arrays.toString(ans));
+    }
+}
+
+class ArrayConcatenator
+{
+    int[] a1;
+    int[] a2;
+    
+    ArrayConcatenator(int[] a1, int[] a2)
+    {
+        this.a1 = a1;
+        this.a2 = a2;
+    }
+    
+    public int[] concat()
+    {
+    int[] ans = new int[a1.length + a2.length];
+    for(int i = 0 ; i < a1.length ; i++)
+    {
+            ans[i] = a1[i];
+    }
+        
+    for(int i = a1.length , j = 0 ; j < a2.length; i++, j++)
+    {
+            ans[i] = a2[j];
+    }
+    return ans;
+    }
+    
+}
