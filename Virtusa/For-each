@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int prod = 1;
+        
+        String s = "";
+        s = s + n;
+        
+        char[] ch = s.toCharArray();
+        
+        for(char c : ch)
+        {
+            int num = c - '0';
+            
+            if(num != 0)
+            {
+                prod = prod * num;
+            }
+            
+        }
+        
+        System.out.println(prod);
+        
+    }
+}
