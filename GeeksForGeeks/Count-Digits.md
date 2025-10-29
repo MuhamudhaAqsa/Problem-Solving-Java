@@ -1,7 +1,8 @@
 [Count Digits – GeeksforGeeks](https://www.geeksforgeeks.org/problems/count-digits5716/1)
 
+Solution
 
-
+```java
 class Solution {
     static int evenlyDivides(int n) {
         
